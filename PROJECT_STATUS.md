@@ -19,28 +19,31 @@
 | 9 | `.gitignore` for Java/Maven/IDE/OS | ✅ Done |
 | 10 | `README.md` with setup instructions | ✅ Done |
 | 11 | `PROJECT_STATUS.md` | ✅ Done |
+| 12 | Maven Wrapper (`mvnw`, `mvnw.cmd`, `.mvn/wrapper`) | ✅ Done |
 
 ## Build & Test Results
 
 ```
-Build tool:   Maven Daemon (mvnd 1.0.3) + Maven 3.9.11
-Java:         Oracle JDK 21.0.12.1
+Build tool:   Maven Wrapper (mvnw.cmd, Apache Maven 3.9.9)
+Java:         Oracle JDK 21.0.12.1 (C:\Program Files\Java\jdk-21.0.12.1)
 Spring Boot:  3.3.5
 
+Command:      $env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.12.1"; .\mvnw.cmd clean test -B
 Tests run:    1, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
-Total time:   ~16s (warm cache)
+Total time:   11.771 s
 ```
 
 Verified on: 2026-10-09
 
-## Known Issues
+## Tooling & Environment Notes
 
-| Issue | Severity | Notes |
-|-------|----------|-------|
-| `mvn` not on PATH | Low | `mvnd` available at `C:\mvnd\...`. Consider adding Maven wrapper (`mvnw`) or adding `mvn` to PATH. |
-| Byte-buddy dynamic agent warning | Cosmetic | JVM warning from Mockito byte-buddy agent on JDK 21. Does not affect functionality. |
-| `JAVA_HOME` points to JDK 17 | Low | Must set `JAVA_HOME` to JDK 21 (`C:\Program Files\Java\jdk-21.0.12.1`) before building. |
+| Item | Status | Notes |
+|------|--------|-------|
+| Maven Wrapper | ✅ Available | `mvnw` and `mvnw.cmd` added with Maven 3.9.9 distribution; no system-wide `mvn` required. |
+| JDK 21 | ✅ Confirmed | Confirmed at `C:\Program Files\Java\jdk-21.0.12.1`. |
+| `JAVA_HOME` | Note | Default system `JAVA_HOME` points to JDK 17; set `$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.12.1"` in the current terminal session before running `./mvnw`. |
+| Byte-buddy dynamic agent warning | Cosmetic | JVM warning from Mockito byte-buddy agent on JDK 21. Does not affect test outcome. |
 
 ## What Is Not Yet Implemented
 
