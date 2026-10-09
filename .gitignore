@@ -1,0 +1,45 @@
+# ==================== Build ====================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ==================== Java ====================
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+replay_pid*
+
+# ==================== Maven ====================
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ==================== IntelliJ IDEA ====================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ==================== VS Code ====================
+.vscode/
+*.code-workspace
+
+# ==================== Eclipse ====================
+.classpath
+.project
+.settings/
+bin/
+
+# ==================== OS ====================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==================== Environment ====================
+.env
+*.env.local
+application-local.properties
